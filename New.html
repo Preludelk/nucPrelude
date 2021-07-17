@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ 
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>个人社保计算器</title>
+		<style>
+			#d1{ 
+				margin-top: 50px;
+			}
+			.fast{
+				text-align: center;
+				border: 0px;
+			}
+		</style>
+		<script>
+			function New(){
+			var Money=document.getElementById("salary").value;
+			var money=parseInt(Money);
+			var A1=money*0.08;
+			var A2=money*0.2;
+			var B1=money*0.02;
+			var B2=money*0.06;
+			var C1=money*0.005;
+			var C2=money*0.015;
+			var D2=money*0.005;		
+			var E2=money*0.008;
+			var F1=money*0.12;
+			var F2=money*0.12;
+			var S1=A1+B1+C1+F1;
+			var S2=A2+B2+C2+D2+E2+F2;
+			var S=S1+S2;
+			document.getElementById("A1").value=A1;
+			document.getElementById("A2").value=A1;
+			document.getElementById("B1").value=B1;
+			document.getElementById("B2").value=B2;
+			document.getElementById("C1").value=C1;
+			document.getElementById("C2").value=C2;
+			document.getElementById("D2").value=D2;
+			document.getElementById("E2").value=E2;
+			document.getElementById("F1").value=F1;
+			document.getElementById("F2").value=F2;
+			document.getElementById("S1").value=S1;
+			document.getElementById("S2").value=S2;
+			document.getElementById("S").value=S;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container text-center" id="d1">
+			<img src="C639343D95B7EFD3EB69D331E8540196.jpg" width="100px" height="100px" class="img-circle">
+			<table class="table table-bordered text-center">
+				<tr>
+					<td>工资</td>
+					<td colspan="3">
+						<input type="text" id="salary" placeholder="请输入工资" class="form-control">
+					</td>
+					<td>
+						<button class="btn btn-danger btn-block" onclick="New()">计算</button>
+					</td>
+				</tr>
+				<tr class="bg-primary">
+					<td>险种</td>
+					<td>个人%</td>
+					<td>个人</td>
+					<td>公司%</td>
+					<td>公司</td>
+				</tr>
+				<tr>
+					<td>养老</td>
+					<td>8%</td>
+					<td><input type="text" id="A1" readonly="readonly"; class="fast"></td>
+					<td>20%</td>
+					<td><input type="text" id="A2" readonly="readonly"; class="fast"></td>
+				</tr>
+				<tr>
+					<td>医疗</td>
+					<td>2%</td>
+					<td><input type="text" id="B1" readonly="readonly"; class="fast"></td>
+					<td>6%</td>
+					<td><input type="text" id="B2" readonly="readonly"; class="fast"></td>
+				</tr>
+				<tr>
+					<td>失业保险</td>
+					<td>0.5%</td>
+					<td><input type="text" id="C1" readonly="readonly"; class="fast"></td>
+					<td>1.5%</td>
+					<td><input type="text" id="C2" readonly="readonly"; class="fast"></td>
+				</tr>
+				<tr>
+					<td>工伤</td>
+					<td></td>
+					<td></td>
+					<td>0.5%</td>
+					<td><input type="text" id="D2" readonly="readonly"; class="fast"></td>
+				</tr>
+				<tr>
+					<td>生育</td>
+					<td></td>
+					<td></td>
+					<td>0.8%</td>
+					<td><input type="text" id="E2" readonly="readonly"; class="fast"></td>
+				</tr>
+				<tr>
+					<td>公积金</td>
+					<td>12%</td>
+					<td><input type="text" id="F1" readonly="readonly"; class="fast"></td>
+					<td>12%</td>
+					<td><input type="text" id="F2" readonly="readonly"; class="fast"></td>
+				</tr>
+				<tr>
+					<td>合计</td>
+					<td>个人合计</td>
+					<td><input type="text" id="S1" readonly="readonly"; class="fast"></td>
+					<td>公司合计</td>
+					<td><input type="text" id="S2" readonly="readonly"; class="fast"></td>
+				</tr>
+				<tr>
+					<td>总额</td>
+					<td colspan="4"><input type="text" id="S" readonly="readonly"; class="fast"></td>
+				</tr>			
+			</table>
+			开发者：郝奕骁 天津农学院 母猪的产后护理专业
+		</div>
+	</body>
+</html>
